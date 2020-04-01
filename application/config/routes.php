@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['contatos/create'] = 'contatos/create';
 $route['contatos/(:any)'] = 'contatos/view/$1';
 $route['contatos'] = 'contatos';
 $route['(:any)'] = 'pages/view/$1';

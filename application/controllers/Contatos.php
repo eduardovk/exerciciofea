@@ -33,4 +33,30 @@ class Contatos extends CI_Controller {
         $this->load->view('contatos/view', $data);
         $this->load->view('templates/footer');
     }
+
+    public function create()
+    {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $data['title'] = 'Cadastrar Novo Contato';
+
+        $this->form_validation->set_rules('nome', 'Nome', 'required');
+        $this->form_validation->set_rules('telefone', 'Telefone', 'required');
+        $this->form_validation->set_rules('email', 'E-mail', 'required');
+
+        if ($this->form_validation->run() === FALSE)
+        {
+            $this->load->view('templates/header', $data);
+            $this->load->view('contatos/create');
+            $this->load->view('templates/footer');
+
+        }
+        else
+        {
+            $this->contatos_model->set_contato();
+            $this->load->view('contatos/success');
+        }
+    }
+
 }
