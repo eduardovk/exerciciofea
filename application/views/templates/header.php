@@ -9,3 +9,8 @@
         <body>
 
                 <h1><?php echo $title; ?></h1>
+                <?php
+                if(!empty($mensagem)){
+                    echo '<h3>'.$mensagem.'</h3>';
+                }
+                 ?>

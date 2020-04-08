@@ -6,6 +6,9 @@ class Contatos extends CI_Controller {
         parent::__construct();
         $this->load->model('contatos_model');
         $this->load->helper('url_helper');
+
+        $this->load->library("controleacesso");
+        $this->controleacesso->verificar_sessao();
     }
 
     public function index()

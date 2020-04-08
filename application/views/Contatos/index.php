@@ -1,5 +1,7 @@
 <h2><?php echo $title; ?></h2>
 
+<a href="<?php echo site_url('login/sair') ?>">Sair</a>
+
 <?php foreach ($contatos as $contatos_item): ?>
 
         <h3><?php echo $contatos_item['nome']; ?></h3>
